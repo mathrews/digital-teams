@@ -213,12 +213,12 @@ main {
 }
 
 #teamsUl .contagem span {
-    line-height: 2.50em;
+    line-height: 2em;
 }
 
 #teamsUl .contagem span > h1 {
     font-weight: 400;
-    font-size: 3.7em;
+    font-size: 3em;
 }
 
 #teamsUl div:nth-child(3) {
