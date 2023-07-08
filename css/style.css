@@ -182,8 +182,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition-duration: 300ms;
     cursor: pointer;
+    transition-duration: 300ms;
 }
 
 #teamsUl li .nomeDoTeam button:hover {
@@ -192,6 +192,11 @@ main {
 
 #teamsUl li .nomeDoTeam button box-icon {
     fill: var(--white);
+    transition-duration: 300ms;
+}
+
+#teamsUl li .nomeDoTeam button:hover box-icon {
+    fill: var(--pink);
 }
 
 #teamsUl .containerCtg {
