@@ -12,6 +12,26 @@
     color: var(--white);
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+    position: absolute;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--gray3);
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--gray1);
+    overflow: hidden;
+}
+
+h4 {
+    font-size: 1.25em !important;
+    font-weight: 700 !important;
+}
+
 .mini-title{
     text-transform: uppercase;
     font-size: 12px;
@@ -24,11 +44,11 @@
     min-height: 30px;
     border: 2px solid var(--pink);
     border-radius: 5px;
-    padding-right: 20px;
     background-color: transparent;
     display: flex;
     align-items: center;
     transition-duration: 200ms;
+    justify-content: space-around;
 }
 
 .btn:hover {
@@ -89,6 +109,8 @@ header .busca input {
     background-color: var(--gray2);
     border: 2px solid var(--gray3);
     transition-duration: 300ms;
+    font-size: 0.75em !important;
+    font-weight: 500 !important;
 }
 
 header .busca input:focus {
@@ -118,5 +140,116 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 1.25em !important;
+    font-weight: 700 !important;
+}
 
+#teamsUl {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.625em;
+}
+
+#teamsUl li {
+    margin-top: 0.625em;
+    width: 19%;
+    height: 100%;
+    background-color: var(--gray2);
+    padding: 10px 14px;
+    border-radius: 10px;
+}
+
+#teamsUl li .nomeDoTeam {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1em;
+}
+
+#teamsUl li .nomeDoTeam h4 {
+    font-size: 1em !important;
+}
+
+#teamsUl li .nomeDoTeam button {
+    background-color: transparent;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition-duration: 300ms;
+}
+
+#teamsUl li .nomeDoTeam button:hover {
+    background-color: var(--gray3);
+}
+
+#teamsUl li .nomeDoTeam button box-icon {
+    fill: var(--white);
+    transition-duration: 300ms;
+}
+
+#teamsUl li .nomeDoTeam button:hover box-icon {
+    fill: var(--pink);
+}
+
+#teamsUl .containerCtg {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#teamsUl .contagem {
+    background-color: var(--gray3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
+    padding-top: 0.65em;
+}
+
+#teamsUl .contagem span {
+    line-height: 2em;
+}
+
+#teamsUl .contagem span > h1 {
+    font-weight: 400;
+    font-size: 3em;
+}
+
+#teamsUl div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+}
+
+#teamsUl div:nth-child(3) .btn:first-child {
+    width: 70%;
+    text-align: center;
+    height: 3em;
+}
+
+#teamsUl div:nth-child(3) .btn:nth-child(2) {
+    width: 3em;
+}
+
+@media only screen and ( max-width: 1024px ) {
+    
+}
+
+@media only screen and ( max-width: 768px ) {
+    
+}
+
+@media only screen and ( max-width: 600px ) {
+    
 }
