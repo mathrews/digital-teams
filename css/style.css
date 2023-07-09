@@ -66,6 +66,71 @@ h4 {
     fill: var(--white);
 }
 
+.btn.form{
+    width: 100%;
+    line-height: 40px;
+    justify-content: center;
+}
+
+.modal{
+    width: 500px;
+    position: fixed;
+    top: 60%;
+    left: calc(50% - 250px);
+    border-radius: 10px;
+    background-color: var(--gray2);
+    padding: 16px;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition-duration: 200ms;
+    transition-delay: 200ms;
+}
+.modal.active{
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+}
+.modal form{
+    width: 100%;
+}
+.modal form h3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+}
+.modal form h3 box-icon{
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    fill: var(--white);
+    cursor: pointer;
+    transition-duration: 200ms;
+    border-radius: 20px;
+    background-color: var(--gray3);
+}
+.modal form h3 box-icon:hover{
+    background-color: var(--pink);
+}
+.modal form label{
+    display: block;
+    margin-bottom: 6px;
+}
+.modal form input{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    padding-left: 10px;
+    background-color: var(--gray2);
+    border: 2px solid var(--gray3);
+    transition-duration: 200ms;
+    margin-bottom: 16px;
+}
+.modal form input:focus{
+    border-color: var(--pink);
+}
+
 :root {
     --gray0: #111111;
     --gray1: #242424;
@@ -109,7 +174,7 @@ header .busca input {
     background-color: var(--gray2);
     border: 2px solid var(--gray3);
     transition-duration: 300ms;
-    font-size: 0.75em !important;
+    font-size: 0.86em !important;
     font-weight: 500 !important;
 }
 
@@ -144,102 +209,81 @@ main {
     font-weight: 700 !important;
 }
 
-#teamsUl {
+#teams h3{
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
     align-items: center;
     justify-content: space-between;
-    margin-top: 0.625em;
 }
-
-#teamsUl li {
-    margin-top: 0.625em;
-    width: 19%;
-    height: 100%;
+#teams ul{
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+#teams ul li{
+    width: calc(20% - 13px);
     background-color: var(--gray2);
     padding: 16px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
-
-#teamsUl li .nomeDoTeam {
+#teams ul li h5{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 1em;
 }
-
-#teamsUl li .nomeDoTeam h4 {
-    font-size: 1em !important;
-}
-
-#teamsUl li .nomeDoTeam button {
-    background-color: transparent;
-    border-radius: 50%;
-    height: 2em;
-    width: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition-duration: 300ms;
-}
-
-#teamsUl li .nomeDoTeam button:hover {
-    background-color: var(--gray3);
-}
-
-#teamsUl li .nomeDoTeam button box-icon {
+#teams ul li h5 box-icon{
     fill: var(--white);
-    transition-duration: 300ms;
+    transition-duration: 200ms;
+    cursor: pointer;
 }
-
-#teamsUl li .nomeDoTeam button:hover box-icon {
+#teams ul li h5 box-icon:hover{
     fill: var(--pink);
 }
-
-#teamsUl .containerCtg {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-#teamsUl .contagem {
+#teams ul li h1{
+    width: 100px;
+    height: 100px;
     background-color: var(--gray3);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 50%;
-    width: 6em;
-    height: 6em;
-    padding-top: 0.65em;
+    margin: 26px auto;
+    font-size: 50px;
+    font-weight: normal;
+    line-height: 50px;
 }
-
-#teamsUl .contagem span {
-    line-height: 2em;
+#teams ul li h1 span{
+    font-size: 16px;
+    line-height: 16px;
 }
-
-#teamsUl .contagem span > h1 {
-    font-weight: 400;
-    font-size: 3em;
-}
-
-#teamsUl div:nth-child(3) {
+#teams ul li .acoes{
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding-top: 1em;
+    gap: 16px;
+}
+#teams ul li .acoes .btn:first-child{
+    flex: 1;
+    justify-content: center;
+}
+#teams ul li .acoes .btn:last-child{
+    padding-right: 0;
 }
 
-#teamsUl div:nth-child(3) .btn:first-child {
-    width: 70%;
-    text-align: center;
-    height: 3em;
+#overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--gray0);
+    transition-duration: 200ms;
+    opacity: 0;
+    visibility: hidden;
 }
-
-#teamsUl div:nth-child(3) .btn:nth-child(2) {
-    width: 3em;
+#overlay.active{
+    opacity: .85;
+    visibility: visible;
 }
 
 @media only screen and ( max-width: 1024px ) {
