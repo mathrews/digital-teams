@@ -14,11 +14,7 @@ fecharFormCriar.onclick = function(){
 }
 
 const teams = [
-    // {
-    //     nome: teamNome.value,
-    //     qtd: teamQtd.value,
-    //     participantes: []                                               
-    // }
+    
 ];
 
 function listarTeams(){

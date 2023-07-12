@@ -286,6 +286,17 @@ main {
     visibility: visible;
 }
 
+#deletarTeam div {
+    display: flex;
+    gap: 16px;
+    padding-top: 1em;
+}
+
+#deletarTeam div button {
+    width: 5em;
+    height: 40px;
+}
+
 @media only screen and ( max-width: 1024px ) {
     
 }
