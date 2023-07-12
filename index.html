@@ -31,6 +31,7 @@
     </main>
 
     <section id="overlay"></section>
+
     <section id="formCriar" class="modal">
         <form id="fc" onsubmit="adicionarTeam()">
             <h3>Criar <box-icon id="fecharFormCriar" name='x'></box-icon></h3>
@@ -47,18 +48,18 @@
     <section id="deletarTeam" class="modal">
         <h4>Tem certeza que deseja excluir esse Team?</h4>
         <div>
-            <button class="btn mini-title">Sim</button>
-            <button class="btn mini-title">Não</button>
+            <button id="removerTrue" class="btn mini-title">Sim</button>
+            <button id="removerFalse" class="btn mini-title">Não</button>
         </div>
     </section>
 
     <section id="addParticipante" class="modal">
         <form id="addP">
             <h3>Adicionar participantes <box-icon id="fecharFormAdd" name='x'></box-icon></h3>
-            <label class="mini-title" for="teamNome">Nome do Participante</label>
-            <input type="text" id="teamNome" required>
+            <label class="mini-title" for="participanteNome">Nome do Participante</label>
+            <input type="text" id="participanteNome" required>
             <button type="submit" class="btn form mini-title">
-                Criar
+                Adicionar
             </button>
         </form>
     </section>
