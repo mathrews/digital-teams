@@ -42,6 +42,32 @@ function adicionarTeam(){
     listarTeams();
 }
 
+function gerarNovoTeams(){
+    for(let i = 0; i < teams.length; i++){
+        const teamsSemObjeto = [];
+    }
+}
+
+function removerTeamIndividual(){
+    removerTrue.onclick = () => {
+        overlay.classList.remove('active');
+        deletarTeam.classList.remove('active');
+        console.log('removido');
+        gerarNovoTeams();
+        listarTeams();
+    }
+
+    removerFalse.onclick = () => {
+        overlay.classList.remove('active');
+        deletarTeam.classList.remove('active');
+        console.log('Não Removido');
+        listarTeams();
+    }
+
+}
+
+removerTeamIndividual();
+
 function listarTeams(){
     listaDeTeams.innerHTML = '';
     for(let i = 0; i < teams.length; i++){
