@@ -43,7 +43,7 @@ function adicionarTeam(){
 }
 
 function gerarNovoTeams(){
-    for(let i = 0; i < teams.length; i++){
+    for(let i = 0; i < teams.length && (i - teams.length) + 1; i++){
         const teamsSemObjeto = [];
     }
 }
