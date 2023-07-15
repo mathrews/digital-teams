@@ -4,32 +4,21 @@
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border-box;
-    list-style: none;
     outline: none;
+    list-style: none;
     text-decoration: none;
+    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-    color: var(--white);
+    color: var(--light);
 }
 
-body::-webkit-scrollbar {
-    width: 10px;
-    position: absolute;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: var(--gray3);
-    border-radius: 5px;
-}
-
-body::-webkit-scrollbar-track {
-    background-color: var(--gray1);
-    overflow: hidden;
-}
-
-h4 {
-    font-size: 1.25em !important;
-    font-weight: 700 !important;
+:root{
+    --gray0: #111111;
+    --gray1: #242424;
+    --gray2: #333333;
+    --gray3: #444444;
+    --pink: #C61067;
+    --light: #FFFFFF; 
 }
 
 .mini-title{
@@ -38,34 +27,28 @@ h4 {
     font-weight: bold;
     letter-spacing: 1px;
 }
-
-.btn {
-    cursor: pointer;
+.btn{
     min-height: 30px;
-    border: 2px solid var(--pink);
-    border-radius: 5px;
     background-color: transparent;
+    border:2px solid var(--pink);
+    border-radius: 5px;
     display: flex;
     align-items: center;
     transition-duration: 200ms;
-    justify-content: space-around;
+    cursor: pointer;
 }
-
-.btn:hover {
+.btn:hover{
     background-color: var(--pink);
 }
-
 .btn:has( box-icon ){
     padding-right: 20px;
 }
-
-.btn box-icon {
+.btn box-icon{
     width: 40px;
     height: 40px;
     padding: 8px;
-    fill: var(--white);
+    fill: var(--light);
 }
-
 .btn.form{
     width: 100%;
     line-height: 40px;
@@ -94,23 +77,23 @@ h4 {
 .modal form{
     width: 100%;
 }
-.modal form h3{
+.modal h3{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 26px;
 }
-.modal form h3 box-icon{
+.modal h3 box-icon{
     width: 40px;
     height: 40px;
     padding: 8px;
-    fill: var(--white);
+    fill: var(--light);
     cursor: pointer;
     transition-duration: 200ms;
     border-radius: 20px;
     background-color: var(--gray3);
 }
-.modal form h3 box-icon:hover{
+.modal h3 box-icon:hover{
     background-color: var(--pink);
 }
 .modal form label{
@@ -131,82 +114,81 @@ h4 {
     border-color: var(--pink);
 }
 
-:root {
-    --gray0: #111111;
-    --gray1: #242424;
-    --gray2: #333333;
-    --gray3: #444444;
-    --pink: #C61067;
-    --white: #FFFFFF;
-}
-
-body {
-    background-color: var(--gray1);
-    width: 100%;
-}
-
-header {
+.modal ul li {
     display: flex;
-    gap: 26px;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 6px;
+    border-radius: 5px;
+    background-color: var(--gray3);
+    padding: 6px;
+}
+
+.modal ul li box-icon {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    fill: var(--light);
+    cursor: pointer;
+    transition-duration: 200ms;
+    border-radius: 20px;
+    background-color: var(--gray3);
+}
+
+.modal ul li box-icon:hover{
+    background-color: var(--pink);
+}
+
+
+body{
+    background-color: var(--gray1);
+}
+
+header{
+    display: flex;
+    align-items: center;
+    gap: 26px;
     padding: 16px 100px;
 }
-
-header .logo {
+header .logo{
     height: 50px;
 }
-
-header .logo img {
+header .logo img{
     display: block;
     height: 100%;
 }
-
-header .busca {
+header .busca{
     width: 500px;
     position: relative;
 }
-
-header .busca input {
+header .busca input{
     width: 100%;
     height: 50px;
     border-radius: 5px;
     padding-left: 10px;
     background-color: var(--gray2);
     border: 2px solid var(--gray3);
-    transition-duration: 300ms;
-    font-size: 0.86em !important;
-    font-weight: 500 !important;
+    transition-duration: 200ms;
 }
-
-header .busca input:focus {
+header .busca input:focus{
     border-color: var(--pink);
 }
-
-header .busca box-icon {
-    fill: var(--white); /*fill - preencher - svg*/
-    position: absolute;
+header .busca input:focus + box-icon{
+    fill: var(--pink);
+}
+header .busca box-icon{
     width: 40px;
     height: 40px;
     padding: 8px;
+    fill: var(--light);
+    position: absolute;
     top: calc(50% - 20px);
     right: 6px;
     transition-duration: 200ms;
 }
 
-header .busca input:focus + box-icon {
-    fill: var(--pink);
-}
-
-main {
+main{
     padding: 60px 100px;
-}
-
-#teams h3 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.25em !important;
-    font-weight: 700 !important;
 }
 
 #teams h3{
@@ -226,13 +208,17 @@ main {
     padding: 16px;
     border-radius: 5px;
 }
+#teams ul li.empty {
+    width: 100%;
+    text-align: center;
+}
 #teams ul li h5{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 #teams ul li h5 box-icon{
-    fill: var(--white);
+    fill: var(--light);
     transition-duration: 200ms;
     cursor: pointer;
 }
@@ -284,27 +270,4 @@ main {
 #overlay.active{
     opacity: .85;
     visibility: visible;
-}
-
-#deletarTeam div {
-    display: flex;
-    gap: 16px;
-    padding-top: 1em;
-}
-
-#deletarTeam div button {
-    width: 5em;
-    height: 40px;
-}
-
-@media only screen and ( max-width: 1024px ) {
-    
-}
-
-@media only screen and ( max-width: 768px ) {
-    
-}
-
-@media only screen and ( max-width: 600px ) {
-    
 }

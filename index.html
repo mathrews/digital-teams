@@ -45,21 +45,21 @@
         </form>
     </section>
 
-    <section id="deletarTeam" class="modal">
-        <h4>Tem certeza que deseja excluir esse Team?</h4>
-        <div>
-            <button id="removerTrue" class="btn mini-title">Sim</button>
-            <button id="removerFalse" class="btn mini-title">Não</button>
-        </div>
+    <section id="mostrarParticipantes" class="modal">
+        <h3>Participantes <box-icon name="x" id="fecharParticipantes"></box-icon></h3>
+        <ul id="listaDeParticipantes">
+            
+        </ul>
     </section>
 
-    <section id="addParticipante" class="modal">
-        <form id="addP">
-            <h3>Adicionar participantes <box-icon id="fecharFormAdd" name='x'></box-icon></h3>
-            <label class="mini-title" for="participanteNome">Nome do Participante</label>
-            <input type="text" id="participanteNome" required>
+    <section id="criarPaticipante" class="modal">
+        <h3>Adicionar Participantes <box-icon id="fecharFormParticipantes" name="x"></box-icon></h3>
+        <form onsubmit="adicionarParticipante()">
+            <input type="hidden" id="teamId">
+            <label class="mini-title" for="participanteNome">Nome</label>
+            <input type="text" id="participanteNome" placeholder="Digite o nome do participante" required>
             <button type="submit" class="btn form mini-title">
-                Adicionar
+                salvar
             </button>
         </form>
     </section>
