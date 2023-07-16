@@ -99,7 +99,7 @@ function listarParticipantes(id){
     for(let i = 0; i < team.participantes.length; i++){
         listaDeParticipantes.innerHTML += `
         <li>
-            ${team.participantes[i]} <box-icon name="trash-alt" type="solid"></box-icon>
+            ${team.participantes[i]} <box-icon onclick="excluirParticipante(${team.participantes[i]})" name="trash-alt" type="solid"></box-icon>
         </li>
         `;
     }
@@ -120,10 +120,10 @@ function adicionarParticipante(){
     }
 
     localStorage.setItem('teams', JSON.stringify(teams));
-
+    
     overlay.classList.remove('active');
     criarPaticipante.classList.remove('active');
-
+    formDosParticipantes.reset()
     listarTeams();
 }
 
