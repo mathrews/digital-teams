@@ -99,7 +99,7 @@ function listarParticipantes(id){
     for(let i = 0; i < team.participantes.length; i++){
         listaDeParticipantes.innerHTML += `
         <li>
-            ${team.participantes[i]} <box-icon onclick="excluirParticipante(${team.participantes[i]})" name="trash-alt" type="solid"></box-icon>
+            ${team.participantes[i]} <box-icon onclick="excluirParticipante('${team.participantes[i]}')" name="trash-alt" type="solid"></box-icon>
         </li>
         `;
     }
@@ -120,10 +120,30 @@ function adicionarParticipante(){
     }
 
     localStorage.setItem('teams', JSON.stringify(teams));
-    
+    addP.reset();
     overlay.classList.remove('active');
     criarPaticipante.classList.remove('active');
-    formDosParticipantes.reset()
+
+    listarTeams();
+}
+
+let teamPart;
+for(let i = 0; i < teams.length; i++){
+    teamPart = teams;
+}
+function excluirParticipante(id){
+    let aux = [];
+    for (let i = 0; i < teamPart[i].length; i++) {
+        if(teamPart.participantes[i] != id){
+            aux.push(teamPart[i].participantes);
+        }
+    }
+    for (let i = 0; i < teamPart.length; i++) {
+        teams[i].participantes = aux;
+    }
+    localStorage.setItem('teams', JSON.stringify(teams));
+    overlay.classList.remove('active');
+    mostrarParticipantes.classList.remove('active');
     listarTeams();
 }
 
