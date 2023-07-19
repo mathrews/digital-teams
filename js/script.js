@@ -96,12 +96,19 @@ function listarParticipantes(id){
             team = teams[i];
         }
     }
-    for(let i = 0; i < team.participantes.length; i++){
-        listaDeParticipantes.innerHTML += `
-        <li>
-            ${team.participantes[i]} <box-icon name="trash-alt" type="solid"></box-icon>
-        </li>
-        `;
+    if(team.participantes.length > 0){
+        for(let i = 0; i < team.participantes.length; i++){
+                listaDeParticipantes.innerHTML += `
+            <li>
+                ${team.participantes[i]} <box-icon onClick="excluirParticipante('${team.participantes[i]}')" name="trash-alt" type="solid"></box-icon>
+            </li>
+            `;
+        }
+    } else {
+        listaDeParticipantes.innerHTML = `
+        <li class="empty">
+            Adicione seu primeiro Participante
+        </li>`;
     }
 }
 
@@ -124,5 +131,26 @@ function adicionarParticipante(){
     overlay.classList.remove('active');
     criarPaticipante.classList.remove('active');
 
+    listarTeams();
+}
+
+let teamPart;
+for(let i = 0; i < teams.length; i++){
+    teamPart = teams;
+}
+function excluirParticipante(id){
+    let aux = [];
+    for (let i = 0; i < teamPart[i].length; i++) {
+        if(teamPart.participantes[i] != id){
+            aux.push(teamPart[i].participantes);
+        }
+    }
+    for (let i = 0; i < teamPart.length; i++) {
+        teams[i].participantes = aux;
+    }
+    localStorage.setItem('teams', JSON.stringify(teams));
+    addP.reset();
+    overlay.classList.remove('active');
+    mostrarParticipantes.classList.remove('active');
     listarTeams();
 }
