@@ -146,3 +146,4 @@ function excluirParticipante(id){
     mostrarParticipantes.classList.remove('active');
     listarTeams();
 }
+
