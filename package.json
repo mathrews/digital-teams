@@ -1,0 +1,19 @@
+{
+  "name": "teams-digital",
+  "version": "1.0.0",
+  "description": "pacote do projeto teams-digital",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathrews/digital-teams.git"
+  },
+  "author": "mathrews",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/mathrews/digital-teams/issues"
+  },
+  "homepage": "https://github.com/mathrews/digital-teams#readme"
+}
